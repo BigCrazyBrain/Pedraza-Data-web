@@ -286,7 +286,7 @@ h1 .highlight {
 }
 
 .separator {
-    width: 60%;
+    width: 80%;
     border: 0;
     border-top: 2px dashed #0066cc;
     opacity: 0.7;
@@ -298,7 +298,7 @@ h1 .highlight {
 }
 
 .project-card img {
-    width: 660px;
+    width: 600px;
     height: auto;
 }
 
