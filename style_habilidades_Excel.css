@@ -1,0 +1,84 @@
+.excel-embed {
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro para contraste */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    text-align: center; /* Centrar texto */
+    font-family: 'Arial', sans-serif;
+}
+
+.excel-embed h2 {
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    color: #2c3e50; /* Azul oscuro profesional */
+    font-weight: bold;
+}
+
+.excel-embed iframe {
+    border: none; /* Sin borde para el iframe */
+    border-radius: 10px; /* Bordes redondeados del iframe */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para iframe */
+    transition: transform 0.3s ease; /* Animación al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+    .excel-embed {
+        padding: 15px;
+    }
+    .excel-embed h2 {
+        font-size: 20px;
+    }
+    .excel-embed iframe {
+        height: 400px; /* Ajusta el tamaño en pantallas más pequeñas */
+    }
+}
+/*Estilos para las habilidades en Excel*/
+.excel-skills {
+    margin: 15px 15px;
+    padding: 30px;
+    background-color: #eef6f9; /* Azul muy claro para destacar la sección */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    color: #2c3e50;
+}
+
+.excel-skills h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #1a73e8; /* Azul brillante para el título */
+    text-align: center;
+}
+
+.excel-skills p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.excel-skills ul, .excel-skills ol {
+    margin: 10px 0;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.excel-skills li {
+    font-size: 15px;
+}
+
+.excel-skills code {
+    background-color: #f5f5f5; /* Fondo gris claro */
+    border-radius: 5px;
+    padding: 2px 4px;
+    font-family: 'Courier New', monospace; /* Fuente de código */
+    color: #2c3e50;
+}
+
+.excel-skills p:last-of-type {
+    background-color: #f9f9f9; /* Fondo claro para destacar */
+    border-left: 4px solid #4CAF50; /* Línea de color en el lado izquierdo */
+    padding: 10px 15px; /* Espaciado interno */
+    margin: 15px 0; /* Espaciado externo */
+    font-style: italic; /* Estilo de fuente para diferenciar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+}

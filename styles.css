@@ -1,0 +1,365 @@
+/* Estilo General */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Nav Bar */
+header {
+    background-color: #1a1a2e; /* Azul oscuro casi negro */
+    padding: 20px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+/* Estilos para el logo como enlace */
+.logo {
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: white; /* Mantén el color de texto blanco */
+    font-size: 1.5em; /* Tamaño del texto */
+    font-weight: bold; /* Fuente en negrita */
+    cursor: pointer; /* Apunta que es interactivo */
+}
+
+.logo:hover {
+    color: #00aaff; /* Cambia el color al pasar el mouse */
+}
+
+
+/*Estilos para el menu de hamburguesa*/
+nav .hamburger {
+    display: none; /* Solo visible en pantallas pequeñas */
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Suaviza la transición */
+}
+
+nav .hamburger span {
+    display: block;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Cuando el icono está activo (desplegado como una X) */
+nav .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg); /* Rota el primer span */
+    position: relative;
+    top: 8px; /* Ajusta la posición para que se cruce */
+}
+
+nav .hamburger.active span:nth-child(2) {
+    opacity: 0; /* Oculta el segundo span */
+}
+
+nav .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg); /* Rota el tercer span */
+    position: relative;
+    top: -5px; /* Ajusta la posición para que se cruce */
+}
+
+
+/*Nav Links*/
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    margin: 0 15px;
+    position: relative; /* Necesario para el menú desplegable */
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Dropdown (Habilidades) */
+nav .nav-links li .dropdown-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+nav .nav-links li .arrow {
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+
+/* Menú oculto por defecto */
+nav .nav-links li .dropdown-menu {
+    display: none; /* Ocultar por defecto */
+    position: absolute;
+    top: 100%; /* Debajo del botón principal */
+    left: 0;
+    background-color: #1a1a2e; /* Fondo oscuro */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    z-index: 1;
+}
+
+nav .nav-links li .dropdown-menu li {
+    margin: 0;
+}
+
+nav .nav-links li .dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav .nav-links li .dropdown-menu li a:hover {
+    background-color: #1a1a2e; /* Fondo azul oscuro al pasar el mouse */
+}
+
+/* Menú visible al activar */
+nav .nav-links li .dropdown-menu.active {
+    display: block; /* Mostrar menú al hacer clic */
+}
+
+nav .nav-links li a:hover {
+    color: #f9a826; /* Color acento */
+}
+
+/* Estilo del botón CV */
+nav .nav-links li .cv-button {
+    border: 2px solid white;
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 5px 15px; /* Espaciado interno */
+    transition: all 0.3s ease; /* Transiciones suaves */
+}
+
+nav .nav-links li .cv-button:hover {
+    background-color: white; /* Fondo blanco al pasar el mouse */
+    color: #1a1a2e; /* Letra azul oscuro */
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav .hamburger {
+        display: flex;
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 10%;
+        left: 0%;
+        background-color: #1a1a2e;
+        width: 100%;
+        z-index: 100;
+
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
+
+    nav .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+        padding: 25px;
+    }
+
+    /* Dropdown Button (Habilidades) */
+    nav .nav-links .dropdown-btn {
+        justify-content: center; /* Centramos horizontalmente */
+    }
+
+    nav .nav-links li .dropdown-menu {
+        position: static; /* Eliminamos la posición absoluta */
+        transform: none; /* No necesitamos centrarlo manualmente */
+        width: 100%; /* Aseguramos que ocupe todo el espacio */
+        margin-top: 10px; /* Separación con el botón */
+        background-color: #444;
+    }
+}
+
+/* Sección de Introducción */
+.intro {
+    height: 80vh;
+    background: url('media/Portada - Datos.jpg') no-repeat center center/cover; /* Cambia 'tu-imagen.jpg' por el archivo real */
+    position: relative;
+}
+
+.intro .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.overlay h1 {
+    font-size: 3em;
+    text-align: center;
+    line-height: 1.5;
+    color: #ffffff; /* Color general del texto */
+    text-shadow: 
+    -2px -2px 0 #000,  /* Sombra hacia arriba a la izquierda */
+    2px -2px 0 #000,   /* Sombra hacia arriba a la derecha */
+    -2px 2px 0 #000,   /* Sombra hacia abajo a la izquierda */
+    2px 2px 0 #000;    /* Sombra hacia abajo a la derecha */
+}
+
+h1 .highlight {
+    color: #00ff6e; /* Destacar palabras clave en un color llamativo */
+    font-weight: bold;
+    text-shadow: 
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,   
+    -2px 2px 0 #000,   
+    2px 2px 0 #000;   
+}
+
+
+/* Sección Los proyectos */
+.projects-overview {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Fondo claro */
+}
+
+.projects-overview h2 {
+    font-size: 28px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.project-card {
+    width: auto;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card a {
+    text-decoration: none; /* Elimina la línea del hipervínculo */
+    color: inherit; /* Opcional: hereda el color del padre */
+}
+
+.separator {
+    width: 60%;
+    border: 0;
+    border-top: 2px dashed #0066cc;
+    opacity: 0.7;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 660px;
+    height: auto;
+}
+
+.project-card p {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #1a73e8;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .project-card .gif, 
+    .project-card .image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* Estilos para Footer */
+footer {
+    background-color: #333; /* Fondo oscuro */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .contact-info {
+    margin-bottom: 10px;
+}
+
+footer .contact-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+/* Icono de LinkedIn */
+footer .linkedin-icon {
+    width: 24px; /* Ajusta el tamaño del icono */
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* Separador */
+footer .footer-divider {
+    margin-top: 10px;
+    border-top: 1px solid #555; /* Barra de separación */
+    padding-top: 10px;
+}
+
+/* Estilo del enlace de LinkedIn */
+footer a {
+    color: #0e76a8; /* Color de LinkedIn */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

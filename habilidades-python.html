@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Carlos Pedraza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style_habilidades_python.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Carlos Pedraza - Data</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="sobre_mi.html">Sobre mí</a></li>
+                <li class="dropdown">
+                    <a href="#skills" class="dropdown-btn">Habilidades <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#python">Python</a></li>
+                        <li><a href="Habilidades-R.html">R</a></li>
+                        <li><a href="habilidades-Excel.html">Excel</a></li>
+                    </ul>
+                </li>
+                <li><a href="#cv" class="cv-button" target="_blank">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Principal -->
+    <section class="skills-python">
+        <h1>Habilidades en Python</h1>
+        <div class="code-snippet">
+            <h2>Manejo de librerías:</h2>
+            <pre>
+<span class="comment"># Librearias</span>
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt
+<span class="keyword">import</span> seaborn <span class="keyword">as</span> sns
+            </pre>
+
+        </div>
+        <div class="code-result">
+            <h2></h2>
+        </div>
+
+        <div class="code-snippet">
+            <h2>Creación de gráficos:</h2>
+            <pre>
+<span class="comment"># Grafico de dispersion de P(t) [poblacion] y Q(t)</span>
+sns.scatterplot(data = population_of_colombia, x = 'Poblacion', y = 'q(t)')
+            </pre>
+
+        </div>
+        <div class="code-result">
+            <h2>Resultado:</h2>
+            <img src="media/scatter_plot.png" alt="Resultado de la gráfica de Python">
+        </div>
+
+    
+        <div class="code-snippet">
+        <h2>Creación de modelos logísticos de predicción:</h2>
+        <pre>
+<span class="comment"># Grafico de la función solucion de la ED</span>
+a_1 = b
+b_1 = abs(m)
+            
+<span class="comment"># Calculo de la constante C</span>
+c = (1/a_1) * np.log(11766989 / (a_1 - b_1 * 11766989))
+            
+            
+<span class="comment"># Definir la función</span>
+def funcion(x):
+    return (a_1 * np.exp(a_1 * x + a_1 * c)) / (1 + b_1 * np.exp(a_1 * x + a_1 * c))
+            
+<span class="comment"># Crear un rango de valores para x</span>
+x = np.linspace(0, 100, 400)  # Rango de x desde 0 hasta 100 con 400 puntos
+            
+<span class="comment"># Calcular los valores de y usando la función</span>
+y = funcion(x)
+            
+<span class="comment"># Graficar la función</span>
+plt.plot(x, y, label=r'$\frac{ a e^{ a x + a \cdot c}}{1 + b e^{a x + a \cdot c}}$')
+            
+<span class="comment"># Añadir títulos y etiquetas</span>
+plt.title('Gráfico del Modelo y datos poblacionales')
+plt.xlabel('t')
+plt.ylabel('P(x)')
+
+<span class="comment"># Añadir una leyenda</span>
+plt.legend()
+
+<span class="comment"># Mostrar la cuadricula del gráfico</span>
+plt.grid(True)
+
+<span class="comment"># Grafico de la poblacion a travez del tiempo</span>
+sns.scatterplot(data = population_of_colombia,
+                x = 't', y = 'Poblacion')
+        </pre>
+
+    </div>
+    <div class="code-result">
+        <h2>Resultado:</h2>
+        <img src="media/Grafico_del_modelo_de_prediccion.png" alt="Resultado de la gráfica de Python">
+    </div>
+
+    </section>
+
+    <section class="colab-link">
+        <h2>Explora el Proyecto en Google Colab</h2>
+        <p>Puedes acceder al código completo y su ejecución directamente en Google Colab haciendo clic en el botón a continuación:</p>
+        <a href="https://colab.research.google.com/drive/1gpJDyMzF_62N0Fg-CL9JkQQJJrFau36m?usp=sharing" target="_blank" class="btn-colab">Abrir en Google Colab</a>
+    </section>
+    
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="contact-info">
+                <p><strong>Teléfono:</strong> +57 322 739 1257</p>
+                <p><strong>Email:</strong> caph751@hotmail.com</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/carlos-pedraza-huertas-ba9575229/" target="_blank"><img src="media\linkedin_icon.png" alt="LinkedIn" class="linkedin-icon"></a></p>
+            </div>
+            <div class="footer-divider">
+                <p>© 2024 Carlos Pedraza</p>
+            </div>
+        </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
